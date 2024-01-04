@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <title>Todoist App</title>
+    <style>
+        #app {
+            text-align: center;
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        section {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .icon {
+            cursor: pointer;
+            font-size: 20px;
+            margin-left: 5px;
+        }
+
+        .icon.tick {
+            color: #4caf50;
+        }
+
+        .icon.cross {
+            color: #d9534f;
+        }
+
+        #todosDone {
+            display: none;
+        }
+
+        #todosDone p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Todoist App</h1>
+            <p>A simple To-Do list app integrated with Todoist API</p>
+        </header>
+        <main>
+            <section id="todoDetails">
+                <label for="todoName">Todo Name:</label>
+                <input type="text" id="todoName" placeholder="Enter todo name">
+                <br>
+                <label for="description">Description:</label>
+                <input type="text" id="description" placeholder="Enter description">
+            </section>
+            <section id="addItemSection">
+                <label for="addItem">Add Item:</label>
+                <input type="text" id="addItem" placeholder="Enter item">
+                <i class="fas fa-check icon tick" onclick="addItemToDoneList()"></i>
+                <i class="fas fa-times icon cross" onclick="clearInputs()"></i>
+            </section>
+            <section id="todosDone">
+                <h2>Todos Done</h2>
+                <!-- Completed items will be displayed here dynamically -->
+            </section>
+        </main>
+        <footer>
+            <p>Developed by Your Name</p>
+        </footer>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
